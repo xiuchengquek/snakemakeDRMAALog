@@ -1,0 +1,26 @@
+
+
+
+import os
+
+drive = './data'
+
+outfiles = [os.path.join('out', x ) for x in os.listdir(drive)]
+
+
+rule all:
+    input : outfiles
+
+
+
+rule cp_files:
+    input : 'data/{samples}'
+    output : 'out/{samples}'
+    shell :  'cp {input} {output}'
+
+
+
+
+
+
+
